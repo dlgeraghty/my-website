@@ -11,12 +11,15 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
-    - name: docker login
-      env:
-        DOCKER_USER: ${{ secrets.DOCKER_USER }} 
-        DOCKER_PASSWD: ${{ secrets.DOCKER_PASSWD }} 
+    - name: docker build
       run: |
-        docker login -u $DOCKER_USER -p $DOCKER_PASSWD
-    - name: Docker build
-      run: |
-        docker build ./ -t my-website
+        docker build ./ -t ghcr.io/dlgeraghty/test
+    - name: ghcr login
+      uses: docker/build-push-action@v1
+      with:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_PAT }}
+        registry: ghcr.io
+        repository: dlgeraghty/test
+        tags: ${{ github.sha }}
+        dockerfile: Dockerfile
