@@ -44,3 +44,14 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+      - name: executing remote ssh commands 
+        uses: appleboy/ssh-action@master
+          with:
+            host: ${{ secrets.HOST }}
+            username: ${{ secrets.USERNAME }}
+            password: ${{ secrets.PASSWORD }}
+            script: |
+              docker pull ghcr.io/dlgeraghty/my-website:dev
+              docker stop test_website
+              docker rm test_website
+              docker run -dit --name test_website -p 8081:80 ghcr.io/dlgeraghty/my-website:dev
