@@ -2,12 +2,13 @@
 # Estas las proporcionan entidades terceras y las gobiernan
 # condiciones de servicio, políticas de privacidad y documentación de soporte
 # documentación.
+name: move from test to prod
 
-name: Create and publish a Docker image
-
-on:
+# Controls when the workflow will run
+on: 
   push:
-    branches: ['dev']
+    branches:
+      - main
 
 env:
   REGISTRY: ghcr.io
@@ -42,8 +43,7 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: dlgeraghty/my-website:latest
       - name: executing remote ssh commands 
         uses: appleboy/ssh-action@master
         with:
@@ -51,7 +51,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            docker pull ghcr.io/dlgeraghty/my-website:dev
-            docker stop test_website
-            docker rm test_website
-            docker run -dit --name test_website -p 8081:80 ghcr.io/dlgeraghty/my-website:dev
+            docker pull ghcr.io/dlgeraghty/my-website:latest
+            docker stop prod_website
+            docker rm prod_website
+            docker run -dit --name prod_website -p 8082:80 ghcr.io/dlgeraghty/my-website:latest
