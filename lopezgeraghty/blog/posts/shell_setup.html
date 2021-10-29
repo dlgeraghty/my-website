@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Bootstrap 4 Blog Template For Developers</title>
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog Template">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">    
+    <link rel="shortcut icon" href="favicon.ico"> 
+    
+    <!-- FontAwesome JS-->
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js" integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7" crossorigin="anonymous"></script>
+    
+    <!-- Plugin CSS -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="../assets/css/theme-1.css">
+    
+
+</head> 
+
+<body>
+    
+    <header class="header text-center">	    
+	    <h1 class="blog-name pt-lg-4 mb-0"><a href="../index.html">David's Blog</a></h1>
+        
+	    <nav class="navbar navbar-expand-lg navbar-dark" >
+           
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column" >
+				<div class="profile-section pt-3 pt-lg-0">
+				    <img class="profile-image mb-3 rounded-circle mx-auto" src="../assets/images/profile.jpg" alt="image" >			
+					
+				    <div class="bio mb-3">You have come to a UCM student and Linux lover blog! Check my portfolio:<a href = "https://lopezgeraghty.com">lopezgeraghty.com</a> </div><!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-twitter fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-linkedin-in fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-github-alt fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-stack-overflow fa-fw"></i></a></li>
+			            <li class="list-inline-item"><a href="#"><i class="fab fa-codepen fa-fw"></i></a></li>
+			        </ul><!--//social-list-->
+			        <hr> 
+				</div><!--//profile-section-->
+				
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item active">
+					    <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="blog-post.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+					</li>
+					<li class="nav-item">
+					    <a class="nav-link" href="lopezgeraghty.com"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+					</li>
+				</ul>
+				
+				<div class="my-2 my-md-3">
+				    <a class="btn btn-primary" href="https://t.me/Davasucm" target="_blank">Get in Touch</a>
+				</div>
+			</div>
+		</nav>
+    </header>
+    
+    <div class="main-wrapper">
+	    
+	    <article class="blog-post px-3 py-5 p-md-5">
+		    <div class="container">
+			    <header class="blog-post-header">
+				    <h2 class="title mb-2">My perfect terminal setup in 3 simple steps</h2>
+			    </header>
+			    
+			    <div class="blog-post-body">
+				    <figure class="blog-banner">
+				        <a href="https://made4dev.com"><img class="img-fluid" src="../assets/images/blog/shell.jpg" alt="image"></a>
+				        <figcaption class="mt-2 text-center image-caption"> My actual setup: zsh + st + NerdFonts prompt </figcaption>
+				    </figure>
+				    <h3 class="mt-5 mb-3">Download and install zsh</h3>
+				    <p> automatic script: it is under development but you van try it : <a href = "https://github.com/dlgeraghthy/st-zsh-rice" > automatic script </a> You can see the development stage there. </p>
+
+				    <h3 class="mt-5 mb-3">Download and install zsh</h3>
+				    <p> Why zsh? for me its the completion features and the customizability that it offers. (it is not as bloated as bash xD) </p>
+				    <p> Depending on your distro you may want to do: <kbd> sudo pacman -S zsh </kbd> or <kbd> sudo apt install zsh </kbd> then you want to set it to default, to view which is your default shell, type: <kbd> echo $SHELL </kbd> if you have never changed it maybe it prints <kbd> bash </kbd>  to swap bash for zsh, do: <kbd> chsh -s $(whereis zsh) </kbd> </p> 
+				    <p> You may have to configure it, if you dont want to get into a lot of detail I would suggest to grab a good config file like the <a href = "https://github.com/LukeSmithxyz/voidrice/blob/master/.config/zsh/.zshrc" > Luke Smith zsh config file </a> its the one I used as a base. </p> Note that some of the features may not work with your setup. I also added History configuration to my config. But the important part that I like about this one is the <kbd> compinit </kbd> part and the <kbd> zsh-syntax-plugin </kbd> (at the end, you have to install this manually, its very easy :) </p>
+				    
+				    <h3 class="mt-5 mb-3">Install and configure st</h3>
+				    <p>  This is the terminal emulator, go ahead to <a href = "https://suckless.org"> suckless website </a> to learn more, this a program that you compile for yourself, but its pretty fun!! </p>
+
+				    <p> To do this, you download the st 0.8.2 (at the moment) in the st.suckless website, it can be found right here: <a href = "https://st.suckless.org" > st </a> scroll down to the Download part and click the st link. You will then get a tar.gz, untar it. Then you will see a folder named st0.8.2 or whatever version number, cd into it and just issue a <kbd> sudo make install </kbd> command. You will have now installed st, try it by launching it with another terminal or via the menu or whatever method you use in your distro :)
+				    <h3 class="mt-5 mb-3">Ricing</h3>
+				    <p> This is the part where we actually get the fonts and set the prompt! </p>
+				    <p> First install the font : <a href = "www.nerdfonts.com/font-downloads" > Nerd fonts </a> I found the <b> Iosevka Nerd Font </b> to work well, just hit the download button. You may want to refer to other place to install the downloaded font as there may be a better way to do it than the one I am about to explain: copy the file you just downloaded to <kbd> .local/share/fonts/misc/ </kbd> and then issue the command : <kbd> fc-cache </kbd> . You may want to make sure that the font is there , you do this with the : <kbd> fc-cache | grep "Nerd" </kbd> command (for example xD) </p>
+				    <p> Its time to change the fonts on the <b> config.h </b> file (under the st directory that should be somewhere in your computer ) . Replace the tow font lines for the following:
+				    <pre> <code>
+static char *font = "Iosevka Nerd Font:size=14";
+				    </code></pre>
+				    This should setup the fonts (make sure you have the inconsolata one too, but really any other can go there as well as it doesnt interfere with the icons). The idea is to put a first font for the text itself that cant support the icons, and so the second one will come into place, we do this to be able to tweak the size so the icons look good. Note that you have to recompile st, but this is trivial if you installed from luke , just type <kbd> sudo make -i </kbd> in the st diectory :)  </p>
+				    <p> We are finally ready to change the prompt, go ahead to the <b> .zshrc </b> file and replace the PS1 for one with the icons you like from the Nerd Fonts cheatsheet ! </p>
+
+				    
+
+			    </div>
+				    
+		    </div><!--//container-->
+	    </article>
+	    
+	    <footer class="footer text-center py-2 theme-bg-dark">
+		   
+	        <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can buy the commercial license via our website: themes.3rdwavemedia.com */-->
+                <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by <a href="http://themes.3rdwavemedia.com" target="_blank">Xiaoying Riley</a> for developers</small>
+		   
+	    </footer>
+    
+    </div><!--//main-wrapper-->
+    
+
+    <!-- *****CONFIGURE STYLE (REMOVE ON YOUR PRODUCTION SITE)****** -->  
+    <div id="config-panel" class="config-panel d-none d-lg-block">
+        <div class="panel-inner">
+            <a id="config-trigger" class="config-trigger config-panel-hide text-center" href="#"><i class="fas fa-cog fa-spin mx-auto" data-fa-transform="down-6" ></i></a>
+            <h5 class="panel-title">Choose Colour</h5>
+            <ul id="color-options" class="list-inline mb-0">
+                <li class="theme-1 active list-inline-item"><a data-style="assets/css/theme-1.css" href="#"></a></li>
+                <li class="theme-2  list-inline-item"><a data-style="assets/css/theme-2.css" href="#"></a></li>
+                <li class="theme-3  list-inline-item"><a data-style="assets/css/theme-3.css" href="#"></a></li>
+                <li class="theme-4  list-inline-item"><a data-style="assets/css/theme-4.css" href="#"></a></li>
+                <li class="theme-5  list-inline-item"><a data-style="assets/css/theme-5.css" href="#"></a></li>
+                <li class="theme-6  list-inline-item"><a data-style="assets/css/theme-6.css" href="#"></a></li>
+                <li class="theme-7  list-inline-item"><a data-style="assets/css/theme-7.css" href="#"></a></li>
+                <li class="theme-8  list-inline-item"><a data-style="assets/css/theme-8.css" href="#"></a></li>
+            </ul>
+            <a id="config-close" class="close" href="#"><i class="fa fa-times-circle"></i></a>
+        </div><!--//panel-inner-->
+    </div><!--//configure-panel-->
+
+    
+       
+    <!-- Javascript -->          
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+    
+    <!-- Page Specific JS -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/blog.js"></script>
+    
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->
+    <script src="assets/js/demo/style-switcher.js"></script>     
+    
+
+</body>
+</html> 
+
