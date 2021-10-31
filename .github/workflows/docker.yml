@@ -43,7 +43,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: dlgeraghty/my-website:latest
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
       - name: executing remote ssh commands 
         uses: appleboy/ssh-action@master
         with:
@@ -51,7 +52,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            docker pull ghcr.io/dlgeraghty/my-website:latest
+            docker pull ghcr.io/dlgeraghty/my-website:main
             docker stop prod_website
             docker rm prod_website
-            docker run -dit --name prod_website -p 8082:80 ghcr.io/dlgeraghty/my-website:latest
+            docker run -dit --name prod_website -p 8082:80 ghcr.io/dlgeraghty/my-website:main
