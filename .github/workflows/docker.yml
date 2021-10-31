@@ -55,4 +55,4 @@ jobs:
             docker pull ghcr.io/dlgeraghty/my-website:main
             docker stop prod_website
             docker rm prod_website
-            docker run -dit --name prod_website -p 8082:80 ghcr.io/dlgeraghty/my-website:main
+            docker run -dit --name prod_website -p 8083:80 ghcr.io/dlgeraghty/my-website:main
