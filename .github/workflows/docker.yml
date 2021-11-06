@@ -6,6 +6,7 @@ name: move from test to prod
 
 # Controls when the workflow will run
 on: 
+  push:
     branches:
       - dev
 
