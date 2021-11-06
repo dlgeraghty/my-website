@@ -6,9 +6,8 @@ name: move from test to prod
 
 # Controls when the workflow will run
 on: 
-  push:
     branches:
-      - main
+      - dev
 
 env:
   REGISTRY: ghcr.io
