@@ -2,13 +2,13 @@
 # Estas las proporcionan entidades terceras y las gobiernan
 # condiciones de servicio, políticas de privacidad y documentación de soporte
 # documentación.
-name: test
+name: move from test to prod
 
 # Controls when the workflow will run
 on: 
   push:
     branches:
-      - dev
+      - main
 
 env:
   REGISTRY: ghcr.io
@@ -52,7 +52,7 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            docker pull ghcr.io/dlgeraghty/my-website:dev
-            docker stop test_website
-            docker rm test_website
-            docker run -dit --name test_website -p 8081:80 ghcr.io/dlgeraghty/my-website:dev
+            docker pull ghcr.io/dlgeraghty/my-website:main
+            docker stop prod_website
+            docker rm prod_website
+            docker run -dit --name prod_website -p 8083:80 ghcr.io/dlgeraghty/my-website:main
