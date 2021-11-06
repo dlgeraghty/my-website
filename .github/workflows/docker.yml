@@ -8,7 +8,7 @@ name: move from test to prod
 on: 
   push:
     branches:
-      - main
+      - dev
 
 env:
   REGISTRY: ghcr.io
